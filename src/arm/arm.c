@@ -19,6 +19,7 @@
 #include "arm/radxa_rock_5b.h"
 #include "arm/radxa_cm5_io.h"
 #include "arm/rockpi4.h"
+#include "arm/orangepizero.h"
 #include "arm/de_nano_soc.h"
 #include "arm/banana.h"
 #include "arm/beaglebone.h"
@@ -124,6 +125,8 @@ mraa_arm_platform()
                  mraa_file_contains("/proc/device-tree/model", "ROCK 4")
                  )
             platform_type = MRAA_ROCKPI4;
+        else if (mraa_file_contains("/proc/device-tree/model", "Xunlong Orange Pi Zero"))
+            platform_type = MRAA_ORANGEPIZERO;
         else if (mraa_file_contains("/proc/device-tree/compatible", "raspberrypi,"))
             platform_type = MRAA_RASPBERRY_PI;
         else if (mraa_file_contains("/proc/device-tree/model", "ADLINK ARM, LEC-PX30"))
@@ -176,6 +179,9 @@ mraa_arm_platform()
             break;
         case MRAA_ROCKPI4:
             plat = mraa_rockpi4();
+            break;
+        case MRAA_ORANGEPIZERO:
+            plat = mraa_orangepizero();
             break;
         case MRAA_DE_NANO_SOC:
             plat = mraa_de_nano_soc();
