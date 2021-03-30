@@ -69,6 +69,7 @@ typedef enum {
     MRAA_UPXTREME = 24,             /**< The UPXTREME Board */
     MRAA_INTEL_ILK = 25,            /**< Intel Learning Kit */
     MRAA_ORANGEPIZERO = 50,         /**< Orange Pi Zero */
+    MRAA_NANOPINEO = 51,            /**< NanoPi Neo */
     // USB platform extenders start at 256
     MRAA_FTDI_FT4222 = 256,         /**< FTDI FT4222 USB to i2c bridge */
 
